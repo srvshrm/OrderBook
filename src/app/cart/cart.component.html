@@ -1,9 +1,19 @@
-<div class  = "ui segment">
-    <div class = "ui header">
+<div class="ui segment">
+    <div class="ui header">
         Cart
     </div>
-    <div class = "ui segment">
-        Display details
+    <div class="ui segment">
+        <div class="ui segment" *ngFor="let cartProduct of cart">
+            <div class="ui header">
+                {{cartProduct.name}}: Rs.{{cartProduct.price}}
+            </div>
+            <div>
+                <img src = {{cartProduct.imagePath}} alt = {{cartProduct.name}} style = "max-height: 4em; max-width: 4em">
+            </div>
+            <div class="align-right">
+                Quantity: {{cartProduct.quantity}}
+            </div>
+        </div>
     </div>
-    <button class = "ui primary button">Checkout</button>
+    <button class="ui primary button">Checkout</button>
 </div>
