@@ -21,4 +21,7 @@ export class CartComponent implements OnInit {
     );
   }
 
+  toRemoveFromCart(index: number) {
+    this.productsService.removeFromCart(index);
+  }
 }

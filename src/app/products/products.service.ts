@@ -16,12 +16,17 @@ export class ProductsService {
         return this.products.slice();
     }
 
+    getCart() {
+        return this.cart.slice();
+    }
+
     addToCart(cartProduct: Cart) {
         this.cart.push(cartProduct);
         this.cartChanged.emit(this.cart.slice());
     }
 
-    getCart() {
-        return this.cart.slice();
+    removeFromCart(index: number) {
+        this.cart.splice(index, 1);
+        this.cartChanged.emit(this.cart.slice());
     }
 }

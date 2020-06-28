@@ -4,10 +4,13 @@
             {{product.name}}: Rs.{{product.price}}
         </div>
         <div>
-            <img src = {{product.imagePath}} alt = {{product.name}} style = "max-height: 8em; max-width: 8em">
+            <img src={{product.imagePath}} alt={{product.name}} style="max-height: 8em; max-width: 8em">
         </div>
         <div class="align-right">
-            <button class = "ui positive button" (click) = 'toAddToCart(product.name, product.price, product.imagePath, 1)'>Add to Cart</button>
+            <button class="ui positive button" (click)='toAddToCart(product.name,
+            product.price,
+            product.imagePath,
+            1)'>Add to Cart</button>
         </div>
     </div>
 </div>

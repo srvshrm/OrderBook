@@ -3,7 +3,7 @@
         Cart
     </div>
     <div class="ui segment">
-        <div class="ui segment" *ngFor="let cartProduct of cart">
+        <div class="ui segment" *ngFor="let cartProduct of cart; let i=index">
             <div class="ui header">
                 {{cartProduct.name}}: Rs.{{cartProduct.price}}
             </div>
@@ -12,6 +12,7 @@
             </div>
             <div class="align-right">
                 Quantity: {{cartProduct.quantity}}
+                <button class="ui negative button" (click)='toRemoveFromCart(i)'>Remove</button>
             </div>
         </div>
     </div>
