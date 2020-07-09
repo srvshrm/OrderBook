@@ -1,1 +1,9 @@
-<p>categories works!</p>
+<div class="ui segment">
+    <div class="ui segment" *ngFor="let prodCategory of categories">
+        <div class="ui header" (click) = getProdDashborad(prodCategory.category)>
+            <img src={{prodCategory.categoryImage}} alt={{prodCategory.category}}
+                style="max-height: 4em; max-width: 4em">
+            {{prodCategory.category}}
+        </div>
+    </div>
+</div>

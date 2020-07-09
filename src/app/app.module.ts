@@ -8,6 +8,13 @@ import { ProductsComponent } from './products/products.component';
 import { FooterComponent } from './footer/footer.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { ProductsService } from './products/products.service';
+import { Routes, RouterModule } from '@angular/router';
+import { DashboardComponent } from './dashboard/dashboard.component';
+
+const appRoutes: Routes = [
+  {path: '', component: CategoriesComponent },
+  {path: 'dashboard/:category', component: DashboardComponent }
+];
 
 @ NgModule({
   declarations: [
@@ -16,10 +23,12 @@ import { ProductsService } from './products/products.service';
     CartComponent,
     ProductsComponent,
     FooterComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    DashboardComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [ProductsService],
   bootstrap: [AppComponent]
